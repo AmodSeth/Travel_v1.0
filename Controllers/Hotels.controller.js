@@ -2,11 +2,13 @@ import Hotel from "../Models/Hotel.model.js";
 
 
 
-export const getHotelData = async (req, res) => {
+export const getSingleHotel = async (req, res) => {
+    const Hoteldata_id = req.params.id; 
     try {
-        res
-            .status(200)
-            .send("this is the endpoint from the hotel controller")
+        const HotelData = await Hotel.findById(Hoteldata_id);
+        res.json(HotelData);
+            
+            
     } catch (error) {
         res
             .status(404)
@@ -24,6 +26,7 @@ export const getHotelCategory = async (req, res) => {
 
         }
         else {
+            //if not found send all the data
             hotelsQuery = await Hotel.find({});
         }
         hotelsQuery ? res.json(hotelsQuery) : res.status(404).json({ message: "no data found" });
