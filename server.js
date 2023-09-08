@@ -2,6 +2,7 @@ import express from "express";
 import hotelRoutes from "./routes/hotels.js"
 import CategoryRoutes from "./routes/Category.js";
 import AuthRouter from "./routes/auth.js";
+import withlist from "./routes/withlist.js";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 
@@ -25,6 +26,7 @@ app.use(express.json());
 app.use("/apiv1/hotel", hotelRoutes);
 app.use("/apiv1/category", CategoryRoutes);
 app.use("/apiv1/auth", AuthRouter);
+app.use("/apiv1/wishlist", withlist);
 
 
 
