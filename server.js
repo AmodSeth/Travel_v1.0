@@ -30,7 +30,12 @@ app.use("/apiv1/wishlist", withlist);
 
 
 
+
 const PORT = 5000;
+
+app.get("/", (req, res) => {
+    res.send("amod seth");
+  });
 
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
