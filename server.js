@@ -32,7 +32,7 @@ app.use("/apiv1/wishlist", wishlist);
 
 
 
-const PORT = 5000;
+const PORT = 10000 || process.env.PORT;
 
 app.get("/", (req, res) => {
     res.send("amod seth");
