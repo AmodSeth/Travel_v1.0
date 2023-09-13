@@ -25,9 +25,11 @@ export const wishlistRouter = async (req, res) => {
 
 //needs to check 
 export const wishlistRouterDelete = async (req, res) => { 
-    const Idtobedeleted = req.params.id;
+    
     try {
-        await Wishlist.findByIdAndDelete(Idtobedeleted);
+        await Wishlist.findByIdAndDelete(
+            req.params.id
+        );
         res.status(201).json({
             message: "Wishlist deleted successfully"
         });
@@ -41,7 +43,7 @@ export const wishlistRouterDelete = async (req, res) => {
 
 }
 
-export const  getWishlist = async (req, res) => {
+export const getWishlist = async (req, res) => {
     try {
         const wishlist = await Wishlist.find();
         wishlist? res.json(wishlist):json({message: "No wishlist found"});

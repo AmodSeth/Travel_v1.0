@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+
 const wishListSchema = new mongoose.Schema({
     hotelId: { type: String, required: true },
 });
