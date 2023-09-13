@@ -1,5 +1,5 @@
 //add a wishlist router
-import  Wishlist  from "../models/Wishlist.model.js";
+import  Wishlist  from "../Models/WishlistModel.js";
 
 export const wishlistRouter = async (req, res) => { 
 
